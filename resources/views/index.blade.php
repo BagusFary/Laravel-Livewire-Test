@@ -1,17 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Laravel LiveWire</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+@extends('layouts.template')
+
+@push('styles')
     @livewireStyles
-</head>
-<body>
-    <div class="container">
-        @livewire('belajar')
-    </div>
+@endpush
+
+@push('scripts')
     @livewireScripts
-</body>
-</html>
+@endpush
+
+
+@section('content')
+    <div>
+        <div class="mt-4 mb-2">
+            <h1>Posts with Livewire</h1>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if(Session::has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="fa-regular fa-circle-check fa-xl"></i><strong> {{ Session::get('success') }}</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            <div>
+                <div class="mb-3">
+                    @livewire('post-form')
+                </div>
+                <div class="mb-3">
+                    @livewire('post-table')    
+                </div>
+            </div>
+        </div>
+    </div>    
+@endsection
