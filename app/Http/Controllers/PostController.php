@@ -12,4 +12,10 @@ class PostController extends Controller
 
         return view('show',['post' => $post]);
     }
+
+    public function edit($id){
+        $post = Post::findOrFail($id);
+        return view('edit',['post' => $post]);
+    }
+    
 }

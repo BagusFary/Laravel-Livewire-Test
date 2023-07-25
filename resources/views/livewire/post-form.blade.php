@@ -16,8 +16,8 @@
             @endif
             <form wire:submit.prevent="store">
                 <div class="mb-2">
-                    <label for="" class="form-label">Title</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" wire:model="title" required>
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model="title" required>
                         @error('title') 
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -25,8 +25,8 @@
                         @enderror
                 </div>
                 <div class="mb-2">
-                    <label for="" class="form-label">Description</label>
-                    <input type="text" class="form-control @error('description') is-invalid @enderror" wire:model="description" required>
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control @error('description') is-invalid @enderror" id="description" wire:model="description" required>
                         @error('description') 
                         <div class="invalid-feedback">
                             {{ $message }}

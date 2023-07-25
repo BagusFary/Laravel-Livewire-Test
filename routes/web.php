@@ -23,3 +23,4 @@ Route::get('/posts', function(){
 });
 
 Route::get('/post/show/{id}',[PostController::class, 'show']);
+Route::get('/post/edit/{id}',[PostController::class, 'edit']);
