@@ -6,15 +6,17 @@
             <th>Description</th>
             <th>Action</th>
         </tr>
+        @foreach ($posts as $post)
         <tr>
-            <td>1</td>
-            <td>Mortal Kombat</td>
-            <td>Fighting game with brutal mechanic</td>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $post->title }}</td>
+            <td>{{ $post->description }}</td>
             <td>
+                <a href="/post/show/{{ $post->id }}" class="btn btn-success">Detail</a>
                 <a href="" class="btn btn-warning">Edit</a>
-                <a href="" class="btn btn-success">Detail</a>
                 <a href="" class="btn btn-danger">Delete</a>
             </td>
         </tr>
+        @endforeach
     </table>
 </div>
