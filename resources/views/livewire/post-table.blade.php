@@ -21,11 +21,11 @@
                 </button>
                 
                 <!-- Modal -->
-                <div class="modal fade" id="deletePost-{{ $post->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="deletePost-{{ $post->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h1 class="modal-title fs-5 text-dark" id="staticBackdropLabel">Delete This Post?</h1>
+                        <h1 class="modal-title text-dark fs-5" id="exampleModalLabel">Delete this post?</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-dark">
@@ -34,8 +34,8 @@
                         Description : {{ $post->description }}
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button wire:click="delete({{ $post->id }})" class="btn btn-outline-danger">Delete</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button wire:click="delete({{ $post->id }})" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                     </div>

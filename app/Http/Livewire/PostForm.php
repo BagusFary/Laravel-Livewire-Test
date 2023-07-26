@@ -20,7 +20,7 @@ class PostForm extends Component
     {
         $this->validate([
             'title' => 'required|string|min:3',
-            'description' => 'required|string|min:3'
+            'description' => 'required|string|min:3|max:20'
         ]);
 
         $storePost = Post::create([
@@ -34,9 +34,12 @@ class PostForm extends Component
             $this->description = NULL;
 
             session()->flash('success', 'Input Data Success!');
+            $this->emit('postAdded');
         } else {
             session()->flash('failed', 'Input Data Failed');
         }
+
+
 
     }
 }

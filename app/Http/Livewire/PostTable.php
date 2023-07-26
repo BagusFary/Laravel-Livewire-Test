@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class PostTable extends Component
 {
+    protected $listeners = ['postAdded' => 'render'];
+    
     public function render()
     {
         $posts = Post::orderBy('id', 'desc')->get();
@@ -21,5 +23,6 @@ class PostTable extends Component
         } else {
             redirect('/posts')->with('failed', 'Delete Post Failed');
         }
+        
     }
 }
