@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    public function index(){
+        return view('index');
+    }
+    
+    public function topicsDetail(){
+        return view('topics-detail');
+    }
+
+    public function indexPost(){
+        return view('posts');
+    }
+
     public function show($id){
         $post = Post::findOrFail($id);
 
