@@ -9,14 +9,6 @@ class PostController extends Controller
 {
 
     public function index(){
-        return view('index');
-    }
-    
-    public function topicsDetail(){
-        return view('topics-detail');
-    }
-
-    public function indexPost(){
         return view('posts');
     }
 

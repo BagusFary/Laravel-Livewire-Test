@@ -14,9 +14,9 @@
             <td>
                 <a href="/post/show/{{ $post->id }}" class="btn btn-success">Detail</a>
                 <a href="/post/edit/{{ $post->id }}" class="btn btn-warning">Edit</a>
-                {{-- <button wire:click="delete({{ $post->id }})" class="btn btn-danger">Delete</button> --}}
+                <button wire:click="delete({{ $post->id }})" class="btn btn-danger">Delete</button>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePost-{{ $post->id }}">
+                {{-- <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletePost-{{ $post->id }}">
                     Delete
                 </button>
                 
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     </div>
-                </div>
+                </div> --}}
             </td>
         </tr>
         @endforeach

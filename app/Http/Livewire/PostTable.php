@@ -19,9 +19,11 @@ class PostTable extends Component
         $post = Post::findOrFail($id);
         $postDelete = $post->delete();
         if($postDelete){
-            redirect('/posts')->with('success', 'Delete Post Success');
+            // redirect('/posts')->with('success', 'Delete Post Success');
+            session()->flash('success','add data success');
         } else {
-            redirect('/posts')->with('failed', 'Delete Post Failed');
+            // redirect('/posts')->with('failed', 'Delete Post Failed');
+            session()->flash('failed','add data failed');
         }
         
     }

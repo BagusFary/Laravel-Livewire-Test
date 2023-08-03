@@ -20,12 +20,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/index', [PostController::class, 'index']);
-Route::get('/topics-detail', [PostController::class, 'topicsDetail']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [PostController::class, 'index']);
-    Route::get('/posts',[PostController::class, 'indexPost']);
+    Route::get('/posts',[PostController::class, 'index']);
     Route::get('/post/show/{id}', [PostController::class, 'show']);
     Route::get('/post/edit/{id}', [PostController::class, 'edit']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
